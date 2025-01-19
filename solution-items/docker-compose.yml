@@ -1,0 +1,40 @@
+networks:
+  rota-viagem-network:
+    driver: bridge
+
+services:
+  rota-viagem.sqlserver:
+    container_name: rota-viagem.sqlserver
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    networks:
+      - rota-viagem-network
+    volumes:
+      - ./data:/var/opt/mssql/data
+      - ./scripts:/docker-entrypoint-initdb.d
+    environment:
+      MSSQL_SA_PASSWORD: "123Aa321"
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_TCP_PORT: 1433
+    ports:
+      - "1433:1433"
+
+  rota-viagem.api:
+    container_name: rota-viagem.api
+    image: ${DOCKER_REGISTRY-}rota-viagem-api
+    build:
+      context: ../
+      dockerfile: api/RotaViagem.Api/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5000
+      - ASPNETCORE_HTTP_PORTS=5001
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+    volumes:
+      - ./conf.d/https/controle/:/https/
+    networks:
+      - rota-viagem-network
+    depends_on:
+      - rota-viagem.sqlserver

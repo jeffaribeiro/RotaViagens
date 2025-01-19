@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{A954F433-FA38-47F4-A559-3AF9738B734A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RotaViagem.Api", "api\RotaViagem.Api\RotaViagem.Api.csproj", "{59A7B2BD-C821-42A5-87FE-988C7CED048E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RotaViagem.Application", "api\RotaViagem.Application\RotaViagem.Application.csproj", "{7985D54D-C47C-4C66-9AAB-FB17F8C1FB3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RotaViagem.Infra.CrossCutting.IoC", "api\RotaViagem.Infra.CrossCutting.IoC\RotaViagem.Infra.CrossCutting.IoC.csproj", "{956B5140-1C56-4C60-89A9-D2EF2D54B099}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RotaViagem.Data", "api\RotaViagem.Data\RotaViagem.Data.csproj", "{31F06AB1-C0DB-4A87-9D12-E951BAA9BD67}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution-items", "solution-items", "{823F3370-A2D2-4CD5-94D7-E991719458D7}"
+	ProjectSection(SolutionItems) = preProject
+		solution-items\docker-compose.yml = solution-items\docker-compose.yml
+		solution-items\env-start.bat = solution-items\env-start.bat
+		solution-items\env-stop.bat = solution-items\env-stop.bat
+		solution-items\exemplo_arquivo_upload_de_rotas.txt = solution-items\exemplo_arquivo_upload_de_rotas.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{41BBF0DA-3222-4EEA-955E-03E65833ED6E}"
+	ProjectSection(SolutionItems) = preProject
+		solution-items\scripts\init.sql = solution-items\scripts\init.sql
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RotaViagem.UnitTests", "tests\RotaViagem.UnitTests\RotaViagem.UnitTests.csproj", "{7CB9E175-5F1D-474E-9547-90A572399B1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{00AF787B-4DEE-4714-A712-D5C68F57FA72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prints", "prints", "{4D01068B-6343-4004-A482-214F1D8398F4}"
+	ProjectSection(SolutionItems) = preProject
+		solution-items\prints\estrutura.png = solution-items\prints\estrutura.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59A7B2BD-C821-42A5-87FE-988C7CED048E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A7B2BD-C821-42A5-87FE-988C7CED048E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A7B2BD-C821-42A5-87FE-988C7CED048E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A7B2BD-C821-42A5-87FE-988C7CED048E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7985D54D-C47C-4C66-9AAB-FB17F8C1FB3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7985D54D-C47C-4C66-9AAB-FB17F8C1FB3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7985D54D-C47C-4C66-9AAB-FB17F8C1FB3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7985D54D-C47C-4C66-9AAB-FB17F8C1FB3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956B5140-1C56-4C60-89A9-D2EF2D54B099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956B5140-1C56-4C60-89A9-D2EF2D54B099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956B5140-1C56-4C60-89A9-D2EF2D54B099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956B5140-1C56-4C60-89A9-D2EF2D54B099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F06AB1-C0DB-4A87-9D12-E951BAA9BD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F06AB1-C0DB-4A87-9D12-E951BAA9BD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F06AB1-C0DB-4A87-9D12-E951BAA9BD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F06AB1-C0DB-4A87-9D12-E951BAA9BD67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB9E175-5F1D-474E-9547-90A572399B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB9E175-5F1D-474E-9547-90A572399B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB9E175-5F1D-474E-9547-90A572399B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB9E175-5F1D-474E-9547-90A572399B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{59A7B2BD-C821-42A5-87FE-988C7CED048E} = {A954F433-FA38-47F4-A559-3AF9738B734A}
+		{7985D54D-C47C-4C66-9AAB-FB17F8C1FB3F} = {A954F433-FA38-47F4-A559-3AF9738B734A}
+		{956B5140-1C56-4C60-89A9-D2EF2D54B099} = {A954F433-FA38-47F4-A559-3AF9738B734A}
+		{31F06AB1-C0DB-4A87-9D12-E951BAA9BD67} = {A954F433-FA38-47F4-A559-3AF9738B734A}
+		{41BBF0DA-3222-4EEA-955E-03E65833ED6E} = {823F3370-A2D2-4CD5-94D7-E991719458D7}
+		{7CB9E175-5F1D-474E-9547-90A572399B1C} = {00AF787B-4DEE-4714-A712-D5C68F57FA72}
+		{4D01068B-6343-4004-A482-214F1D8398F4} = {823F3370-A2D2-4CD5-94D7-E991719458D7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E483E17-6282-4F47-9C4A-EE67D3CA28FE}
+	EndGlobalSection
+EndGlobal
