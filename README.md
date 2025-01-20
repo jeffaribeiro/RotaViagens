@@ -1,9 +1,5 @@
 # Rota Viagens
 
-## Estrutura projeto (Visual Studio)
-
-![Estrutura Projeto VS](solution-items/prints/estrutura.png)
-
 ## Decisões de design
 
 Seguem abaixo a descrição das decisões de design adotadas.
@@ -19,7 +15,26 @@ A Clean Architecture organiza o código de forma a torná-lo altamente modular, 
 - Modularidade: Cada camada tem uma responsabilidade bem definida, facilitando manutenção e adição de novas funcionalidades.
 - Testabilidade: As camadas internas (casos de uso e entidades) são isoladas, permitindo testes unitários independentes de dependências externas.
 - Flexibilidade: Troca de frameworks ou tecnologias (ex.: mudar banco de dados ou UI) sem impacto no núcleo do sistema.
+- Estrutura de diretórios: Possui uma estrutura de diretórios bem organizada. Pastas separadas para cada camada (domain, data, aplicattion...) e padrões de nomenclatura claros.
 - Evolução do Código: Facilita a refatoração e a evolução do projeto. Minimiza o impacto de mudanças. Serve como ponto de partida para utilizar outras abordagens mais robustas como Onion Architecture ou Hexagonal (Ports and Adapters).
+
+### Estrutura de diretórios
+
+![Estrutura Projeto VS](solution-items/prints/estrutura.png)
+
+![Estrutura pasta API - Camada API](solution-items/prints/estrutura-api-rotaviagem-api.png)
+
+![Estrutura pasta API - Camada Application](solution-items/prints/estrutura-api-rotaviagem-application.png)
+
+![Estrutura pasta API - Camada Domain](solution-items/prints/estrutura-api-rotaviagem-domain.png)
+
+![Estrutura pasta API - Camada Data](solution-items/prints/estrutura-api-rotaviagem-data.png)
+
+![Estrutura pasta API - Camada Infra](solution-items/prints/estrutura-api-rotaviagem-infra-crosscutting-ioc.png)
+
+![Estrutura pasta Tests](solution-items/prints/estrutura-tests.png)
+
+![Estrutura pasta Solution Items](solution-items/prints/estrutura-solution-items.png)
 
 ## Instruções para execução da aplicação
 
