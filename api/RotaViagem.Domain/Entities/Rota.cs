@@ -1,4 +1,4 @@
-﻿namespace RotaViagem.Application.Features.Rotas.Domain
+﻿namespace RotaViagem.Domain.Entities
 {
     public class Rota
     {

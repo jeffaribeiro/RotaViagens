@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\api\RotaViagem.Application\RotaViagem.Application.csproj" />
     <ProjectReference Include="..\..\api\RotaViagem.Data\RotaViagem.Data.csproj" />
+    <ProjectReference Include="..\..\api\RotaViagem.Domain\RotaViagem.Domain.csproj" />
   </ItemGroup>
 
 </Project>

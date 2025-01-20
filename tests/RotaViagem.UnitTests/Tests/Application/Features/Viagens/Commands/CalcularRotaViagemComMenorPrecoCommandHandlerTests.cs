@@ -1,5 +1,5 @@
 ﻿using Moq;
-using RotaViagem.Application.Features.Rotas.Domain;
+using RotaViagem.Domain.Entities;
 using RotaViagem.Application.Features.Viagens.Commands;
 using RotaViagem.Application.Infra.Notification;
 using RotaViagem.Application.Infra.Repositories;
@@ -19,7 +19,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Commands
             _handler = new CalcularRotaViagemComMenorPrecoCommandHandler(_mockRotaRepository.Object, _mockNotificador.Object);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Falha na validação quando validação falhar")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoCommandHandler")]
         public async Task Handle_DeveRetornarNull_QuandoValidacaoFalhar()
         {
             // Arrange
@@ -35,7 +36,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Commands
             _mockRotaRepository.Verify(r => r.DestinoEstaCadastrado(It.IsAny<string>()), Times.Never);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Falha na validação quando origem não estiver cadastrada")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoCommandHandler")]
         public async Task Handle_DeveRetornarNull_QuandoOrigemNaoEstiverCadastrada()
         {
             // Arrange
@@ -51,7 +53,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Commands
             _mockNotificador.Verify(n => n.Handle(It.Is<Notificacao>(s => s.Mensagem.Contains("origem"))), Times.Once);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Falha na validação quando destino não estiver cadastrado")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoCommandHandler")]
         public async Task Handle_DeveRetornarNull_QuandoDestinoNaoEstiverCadastrado()
         {
             // Arrange
@@ -67,7 +70,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Commands
             _mockNotificador.Verify(n => n.Handle(It.Is<Notificacao>(s => s.Mensagem.Contains("destino"))), Times.Once);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Sucesso: melhor rota encontrada")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoCommandHandler")]
         public async Task Handle_DeveRetornarViagemDto_QuandoRotaMaisBarataForEncontrada()
         {
             // Arrange
@@ -90,14 +94,15 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Commands
             Assert.Equal(new List<string> { "SDU", "BSB", "CWB", "GRU" }, result.Conexoes);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Sucesso: rota indisponível")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoCommandHandler")]
         public async Task Handle_DeveRetornarNull_QuandoNaoExistirCaminhoDisponivel()
         {
             // Arrange
             var command = new CalcularRotaViagemComMenorPrecoCommand { Origem = "SDU", Destino = "GRU" };
             _mockRotaRepository.Setup(r => r.OrigemEstaCadastrada("SDU")).ReturnsAsync(true);
             _mockRotaRepository.Setup(r => r.DestinoEstaCadastrado("GRU")).ReturnsAsync(true);
-            _mockRotaRepository.Setup(r => r.BuscarTodas()).ReturnsAsync(new List<RotaViagem.Application.Features.Rotas.Domain.Rota>
+            _mockRotaRepository.Setup(r => r.BuscarTodas()).ReturnsAsync(new List<Rota>
         {
             new Rota { Origem = "SDU", Destino = "BSB", Valor = 10 }
         });

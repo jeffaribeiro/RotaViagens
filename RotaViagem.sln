@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "prints", "prints", "{4D0106
 		solution-items\prints\estrutura.png = solution-items\prints\estrutura.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaViagem.Domain", "api\RotaViagem.Domain\RotaViagem.Domain.csproj", "{7BB96618-F109-493C-9971-C9E1FB2DDF16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{7CB9E175-5F1D-474E-9547-90A572399B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CB9E175-5F1D-474E-9547-90A572399B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CB9E175-5F1D-474E-9547-90A572399B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB96618-F109-493C-9971-C9E1FB2DDF16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB96618-F109-493C-9971-C9E1FB2DDF16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB96618-F109-493C-9971-C9E1FB2DDF16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB96618-F109-493C-9971-C9E1FB2DDF16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{41BBF0DA-3222-4EEA-955E-03E65833ED6E} = {823F3370-A2D2-4CD5-94D7-E991719458D7}
 		{7CB9E175-5F1D-474E-9547-90A572399B1C} = {00AF787B-4DEE-4714-A712-D5C68F57FA72}
 		{4D01068B-6343-4004-A482-214F1D8398F4} = {823F3370-A2D2-4CD5-94D7-E991719458D7}
+		{7BB96618-F109-493C-9971-C9E1FB2DDF16} = {A954F433-FA38-47F4-A559-3AF9738B734A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E483E17-6282-4F47-9C4A-EE67D3CA28FE}

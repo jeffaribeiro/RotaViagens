@@ -3,6 +3,7 @@ using RotaViagem.Application.Base;
 using RotaViagem.Application.Features.Rotas.Validators;
 using RotaViagem.Application.Infra.DatabaseSession;
 using RotaViagem.Application.Infra.Notification;
+using RotaViagem.Domain.Entities;
 
 namespace RotaViagem.Application.Features.Rotas.Commands
 {
@@ -33,7 +34,7 @@ namespace RotaViagem.Application.Features.Rotas.Commands
                     return false;
                 }
 
-                var novaRota = new Domain.Rota
+                var novaRota = new Rota
                 {
                     Origem = rotaDto.Origem,
                     Destino = rotaDto.Destino,

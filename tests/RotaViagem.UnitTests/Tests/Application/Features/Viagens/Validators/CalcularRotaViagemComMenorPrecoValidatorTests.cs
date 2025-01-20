@@ -13,7 +13,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Validators
             _validator = new CalcularRotaViagemComMenorPrecoValidator();
         }
 
-        [Fact]
+        [Fact(DisplayName = "Falha na validação quando origem estiver vazia")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoValidator")]
         public void Validator_DeveFalhar_QuandoOrigemEstiverVazia()
         {
             // Arrange
@@ -27,7 +28,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Validators
                   .WithErrorMessage("Origem deve ser informada.");
         }
 
-        [Fact]
+        [Fact(DisplayName = "Falha na validação quando origem não tiver 3 caracteres")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoValidator")]
         public void Validator_DeveFalhar_QuandoOrigemNaoTiver3Caracteres()
         {
             // Arrange
@@ -41,7 +43,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Validators
                   .WithErrorMessage("Origem deve ter exatamente 3 caracteres.");
         }
 
-        [Fact]
+        [Fact(DisplayName = "Sucesso na validação de origem")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoValidator")]
         public void Validator_DevePassar_QuandoOrigemTiver3Caracteres()
         {
             // Arrange
@@ -54,7 +57,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Validators
             result.ShouldNotHaveValidationErrorFor(command => command.Origem);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Falha na validação quando destino estiver vazia")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoValidator")]
         public void Validator_DeveFalhar_QuandoDestinoEstiverVazio()
         {
             // Arrange
@@ -68,7 +72,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Validators
                   .WithErrorMessage("Destino deve ser informado.");
         }
 
-        [Fact]
+        [Fact(DisplayName = "Falha na validação quando destino não tiver 3 caracteres")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoValidator")]
         public void Validator_DeveFalhar_QuandoDestinoNaoTiver3Caracteres()
         {
             // Arrange
@@ -82,7 +87,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Viagens.Validators
                   .WithErrorMessage("Destino deve ter exatamente 3 caracteres.");
         }
 
-        [Fact]
+        [Fact(DisplayName = "Sucesso")]
+        [Trait("Viagens", "CalcularRotaViagemComMenorPrecoValidator")]
         public void Validator_DevePassar_QuandoDestinoTiver3Caracteres()
         {
             // Arrange

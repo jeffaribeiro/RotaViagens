@@ -1,5 +1,5 @@
 ﻿using Dapper;
-using RotaViagem.Application.Features.Rotas.Domain;
+using RotaViagem.Domain.Entities;
 using RotaViagem.Application.Infra.DatabaseSession;
 using RotaViagem.Application.Infra.Repositories;
 using System.Data;

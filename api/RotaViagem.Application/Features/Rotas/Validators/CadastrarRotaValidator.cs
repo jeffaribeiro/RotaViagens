@@ -16,9 +16,19 @@ namespace RotaViagem.Application.Features.Rotas.Validators
                 .WithMessage("Rotas possui valor não preenchido na linha {CollectionIndex}.");
 
             RuleForEach(command => command.Rotas)
-                .SetValidator(new RotaDtoValidator())
-                .When(command => command.Rotas is not null)
-                .WithMessage("Erro na validação da linha {CollectionIndex}.");
+                .Custom((rotaDto, context) =>
+                {
+                    if (rotaDto == null)
+                        return;
+
+                    var validator = new RotaDtoValidator();
+                    var validationResult = validator.Validate(rotaDto);
+
+                    if (!validationResult.IsValid)
+                    {
+                        context.AddFailure($"Erro na validação da linha {context.PropertyName}: {string.Join(", ", validationResult.Errors.Select(e => e.ErrorMessage))}");
+                    }
+                });
         }
     }
 }

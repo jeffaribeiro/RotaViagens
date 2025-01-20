@@ -12,6 +12,7 @@ COPY ["api/RotaViagem.Api/RotaViagem.Api.csproj", "api/RotaViagem.Api/"]
 COPY ["api/RotaViagem.Application/RotaViagem.Application.csproj", "api/RotaViagem.Application/"]
 COPY ["api/RotaViagem.Infra.CrossCutting.IoC/RotaViagem.Infra.CrossCutting.IoC.csproj", "api/RotaViagem.Infra.CrossCutting.IoC/"]
 COPY ["api/RotaViagem.Data/RotaViagem.Data.csproj", "api/RotaViagem.Data/"]
+COPY ["api/RotaViagem.Data/RotaViagem.Domain.csproj", "api/RotaViagem.Domain/"]
 RUN dotnet restore "./api/RotaViagem.Api/./RotaViagem.Api.csproj"
 COPY . .
 

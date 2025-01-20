@@ -1,9 +1,9 @@
 ﻿using Moq;
 using RotaViagem.Application.Features.Rotas.Commands;
-using RotaViagem.Application.Features.Rotas.Domain;
 using RotaViagem.Application.Features.Rotas.Dtos;
 using RotaViagem.Application.Infra.DatabaseSession;
 using RotaViagem.Application.Infra.Notification;
+using RotaViagem.Domain.Entities;
 
 namespace RotaViagem.UnitTests.Tests.Application.Features.Rotas.Commands
 {
@@ -20,7 +20,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Rotas.Commands
             _handler = new CadastrarRotaCommandHandler(_mockUoW.Object, _mockNotificador.Object);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Falha na validação quando validação falhar")]
+        [Trait("Rotas", "CadastrarRotaCommandHandler")]
         public async Task Handle_DeveRetornarFalse_QuandoValidacaoFalhar()
         {
             // Arrange
@@ -41,7 +42,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Rotas.Commands
             _mockUoW.Verify(u => u.BeginTransaction(), Times.Never);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Falha na validação quando houver uma rota cadastrada")]
+        [Trait("Rotas", "CadastrarRotaCommandHandler")]
         public async Task Handle_DeveRetornarFalse_QuandoRotaJaCadastrada()
         {
             // Arrange
@@ -62,7 +64,8 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Rotas.Commands
             _mockNotificador.Verify(n => n.Handle(It.IsAny<Notificacao>()), Times.Once);
         }
 
-        [Fact]
+        [Fact(DisplayName = "Sucesso")]
+        [Trait("Rotas", "CadastrarRotaCommandHandler")]
         public async Task Handle_DeveRetornarTrue_QuandoCadastroBemSucedido()
         {
             // Arrange
@@ -76,7 +79,7 @@ namespace RotaViagem.UnitTests.Tests.Application.Features.Rotas.Commands
             };
 
             _mockUoW.Setup(u => u.RotaRepository.BuscarRota(It.IsAny<string>(), It.IsAny<string>()))
-                    .ReturnsAsync((RotaViagem.Application.Features.Rotas.Domain.Rota)null);
+                    .ReturnsAsync((Rota)null);
 
             _mockUoW.Setup(u => u.Commit()).Returns(true);
 

@@ -1,4 +1,4 @@
-﻿using RotaViagem.Application.Features.Rotas.Domain;
+﻿using RotaViagem.Domain.Entities;
 
 namespace RotaViagem.Application.Infra.Repositories
 {
