@@ -1,8 +1,11 @@
 # Rota Viagens
 
+Este projeto é a resolução de um desafio técnico, parte do processo seletivo para integração na equipe de desenvolvimento de software do Banco Master.
+Abaixo descreverei pontos importantes levados em consideração para o desenvolvimento desta solução e as instruções para a execução do sistema.
+
 ## Decisões de design
 
-Seguem abaixo a descrição das decisões de design adotadas.
+Seguem abaixo a descrição das decisões de design adotadas para a realização do teste técnico.
 
 ### Clean Architecture
 
@@ -18,17 +21,34 @@ A Clean Architecture organiza o código de forma a torná-lo altamente modular, 
 - Estrutura de diretórios: Possui uma estrutura de diretórios bem organizada. Pastas separadas para cada camada (domain, data, aplicattion...) e padrões de nomenclatura claros.
 - Evolução do Código: Facilita a refatoração e a evolução do projeto. Minimiza o impacto de mudanças. Serve como ponto de partida para utilizar outras abordagens mais robustas como Onion Architecture ou Hexagonal (Ports and Adapters).
 
+### Bibliotecas
+
+Abaixo segue a listagem de bibliotecas auxiliares utilizadas e a justificativa de uso, visando maior produtividade e simplificação do código:
+
+- Dapper: Micro ORM de alto desempenho. Mais leve e rápido que ORMs completos como o Entity Framework, especialmente para operações simples. Ideal para cenários onde o controle total sobre as consultas SQL é necessário, mas ainda se deseja mapear resultados diretamente para objetos C#.
+- FluentValidation: Simplifica a validação de dados com uma sintaxe fluente e intuitiva. Separa as regras de validação, promovendo o princípio de separação de responsabilidades (SRP) do SOLID.
+- MediatR: Reduz o acoplamento entre diferentes partes do sistema, promovendo a comunicação por meio de mensagens. Melhora a testabilidade, pois desacopla o fluxo de execução de ações no sistema. Facilita a implementação de um design baseado em CQRS e orientado a eventos.
+- Swashbuckle.AspnetCore: Integrar a documentação Swagger ao AspnetCore. Simplifica o teste e a integração da API com ferramentas externas.
+- xUnit: Biblioteca de teste de unidade amplamente utilizada na comunidade .NET. Suporta recursos avançados, como fixtures e compartilhamento de contexto entre testes. Leve, flexível e facilmente integrado com ferramentas de CI/CD.
+- Moq: Permite simular o comportamento de dependências externas, como repositórios, serviços ou APIs.
+
+### Docker e Docker Compose
+
+O Docker é uma plataforma que permite empacotar aplicações e suas dependências em contêineres, garantindo portabilidade entre diferentes ambientes (desenvolvimento, teste e produção). É leve e eficiente, utilizando menos recursos do que máquinas virtuais. Fornece um ambiente isolado e replicável, permitindo que a aplicação .NET Core seja executada da mesma forma em qualquer lugar, desde máquinas locais até servidores na nuvem.
+
+O Docker Compose complementa o Docker ao permitir a orquestração de múltiplos contêineres. É possível definir serviços como API, banco de dados e cache, configurando portas, variáveis de ambiente e redes. Isso facilita a implantação, execução e o gerenciamento de ambientes completos com comandos simples.
+
 ### Estrutura de diretórios
 
 #### API
 
-Possui as controllers, com as chamadas para as feaures/use cases do sistema.
+Possui as controllers, com as chamadas para as features/use cases do sistema.
 
 ![Estrutura pasta API - Camada API](solution-items/prints/estrutura-api-rotaviagem-api.png)
 
 #### Application
 
-Mantém a lógica de negócio de cada feaure/use case do sistema. As features estão organizadas por entidades de domínio do negócio.
+Mantém a lógica de negócio de cada feature/use case do sistema. As features estão organizadas por entidades de domínio do negócio.
 
 ![Estrutura pasta API - Camada Application](solution-items/prints/estrutura-api-rotaviagem-application.png)
 
@@ -56,7 +76,7 @@ Implementa os testes da aplicação.
 
 ![Estrutura pasta Tests](solution-items/prints/estrutura-tests.png)
 
-#### Tests
+#### Solution Items
 
 Possui os arquivos necessários para preparação de ambiente de desenvolvimento e manutenção de documentação.
 
