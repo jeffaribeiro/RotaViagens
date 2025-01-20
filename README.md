@@ -20,19 +20,45 @@ A Clean Architecture organiza o código de forma a torná-lo altamente modular, 
 
 ### Estrutura de diretórios
 
-![Estrutura Projeto VS](solution-items/prints/estrutura.png)
+#### API
+
+Possui as controllers, com as chamadas para as feaures/use cases do sistema.
 
 ![Estrutura pasta API - Camada API](solution-items/prints/estrutura-api-rotaviagem-api.png)
 
+#### Application
+
+Mantém a lógica de negócio de cada feaure/use case do sistema. As features estão organizadas por entidades de domínio do negócio.
+
 ![Estrutura pasta API - Camada Application](solution-items/prints/estrutura-api-rotaviagem-application.png)
+
+#### Domain
+
+Aqui são implementadas as classes que representam entidades, value objects e outras regras específicas do domínio da aplicação.
 
 ![Estrutura pasta API - Camada Domain](solution-items/prints/estrutura-api-rotaviagem-domain.png)
 
+#### Data
+
+Representa as classes que realizam acesso ao banco de dados e realizam as operações de leitura e escrita.
+
 ![Estrutura pasta API - Camada Data](solution-items/prints/estrutura-api-rotaviagem-data.png)
 
-![Estrutura pasta API - Camada Infra](solution-items/prints/estrutura-api-rotaviagem-infra-crosscutting-ioc.png)
+#### Infra CrossCutting
+
+Implementa os injeções de dependência e recursos comuns a todas as camadas da aplicação.
+
+![Estrutura pasta API - Camada Infra Cross Cuiiting](solution-items/prints/estrutura-api-rotaviagem-infra-crosscutting-ioc.png)
+
+#### Tests
+
+Implementa os testes da aplicação.
 
 ![Estrutura pasta Tests](solution-items/prints/estrutura-tests.png)
+
+#### Tests
+
+Possui os arquivos necessários para preparação de ambiente de desenvolvimento e manutenção de documentação.
 
 ![Estrutura pasta Solution Items](solution-items/prints/estrutura-solution-items.png)
 
